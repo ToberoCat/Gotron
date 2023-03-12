@@ -1,17 +1,20 @@
 import { AppController } from "./controller/AppController";
 import { InputController } from "./controller/InputController";
-import { exec, ExecResult } from "./index";
+import { exec, ExecResult } from "./DeviceTools";
 import { Hierarchy } from "./controller/HierarchyController";
+import { FileController } from "./controller/FileController";
 
 export class Device {
   private readonly _serialId: string;
   private readonly _appController: AppController;
   private readonly _inputController: InputController;
+  private readonly _fileController: FileController;
 
   protected constructor(serialId: string) {
     this._serialId = serialId;
     this._appController = new AppController(this);
     this._inputController = new InputController(this);
+    this._fileController = new FileController(this);
   }
 
   public async platformVersion(): Promise<string> {
@@ -40,7 +43,7 @@ export class Device {
     return new Promise(async resolve => {
       await this.adb("wait-for-device");
       const intervalId = setInterval(async () => {
-        if ((await this.shell("getprop sys.boot_completed")).stdout.trim() != "1")
+        if ((await this.shell("getprop sys.boot_completed")).stdout.trim() !== "1")
           return;
 
         clearInterval(intervalId);
@@ -49,12 +52,23 @@ export class Device {
     });
   }
 
+  public async screenshot(filePath: string) {
+    const name = Date.now() + ".png";
+    await this.shell(`screencap /sdcard/${name}`);
+    await this._fileController.getFile(`/sdcard/${name}`, filePath);
+  }
+
   public get apps(): AppController {
     return this._appController;
   }
 
   public get inputs(): InputController {
     return this._inputController;
+  }
+
+
+  get files(): FileController {
+    return this._fileController;
   }
 
   public get serialId(): string {

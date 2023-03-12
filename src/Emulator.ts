@@ -1,17 +1,16 @@
 import { Device } from "./Device";
-import { exec } from "./index";
+import { exec } from "./DeviceTools";
 
 export class Emulator extends Device {
 
   public static async newEmulator(port: number, emulatorId?: string): Promise<Emulator> {
-    if (emulatorId == undefined)
+    if (emulatorId === undefined)
       emulatorId = (await this.getInstalledDevices())[0];
 
-    if (emulatorId == undefined)
+    if (emulatorId === undefined)
       throw new Error("No avd was found with the name " + emulatorId);
 
-    exec(`emulator -ports ${port},${port + 1} @${emulatorId}`)
-      .then(() => console.log("Emulator stopped"));
+    exec(`emulator -ports ${port},${port + 1} @${emulatorId}`);
     return new Emulator("emulator-" + port);
   }
 

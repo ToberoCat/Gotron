@@ -1,6 +1,6 @@
 {
   "name": "gotron",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Gotron is a javascript automation software for android. It allows you to manage apps, tap on the screen and more.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -46,6 +46,7 @@
   ],
   "dependencies": {
     "xmldom": "^0.6.0",
-    "xpath": "^0.0.32"
+    "xpath": "^0.0.32",
+    "xml-formatter": "^3.3.2"
   }
 }

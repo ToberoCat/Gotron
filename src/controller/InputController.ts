@@ -1,7 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 
 import { Device } from "../Device";
-import { ExecResult } from "../index";
+import { ExecResult } from "../DeviceTools";
 import { DeviceActor } from "./Controller";
 
 export class InputController extends DeviceActor {

@@ -1,0 +1,12 @@
+{
+  "name": "gotron",
+  "version": "1.0.0",
+  "description": "Gotron is a javascript automation software for android. It allows you to manage apps, tap on the screen and more.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["android"],
+  "author": "Tobero",
+  "license": "ISC"
+}

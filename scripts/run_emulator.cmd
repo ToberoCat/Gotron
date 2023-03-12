@@ -1,0 +1,1 @@
+emulator -ports 5555,5556 @Pixel_4_API_33

@@ -1,6 +1,6 @@
 import { DeviceActor } from "./Controller";
-import { ExecResult } from "../DeviceTools";
-import { Device } from "../Device";
+import { ExecResult } from "../utils/DeviceTools";
+import { Device } from "../device/Device";
 
 export class FileController extends DeviceActor {
   constructor(device: Device) {

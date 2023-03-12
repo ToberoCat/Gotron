@@ -1,7 +1,7 @@
 import { DeviceActor } from "../controller/Controller";
 import { SelectedValue } from "xpath";
-import { Device } from "../Device";
-import { ExecResult } from "../DeviceTools";
+import { Device } from "../device/Device";
+import { ExecResult } from "../utils/DeviceTools";
 import { Bounds } from "../utils/Bounds";
 
 export class AppElement extends DeviceActor {

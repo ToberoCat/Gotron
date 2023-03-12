@@ -1,4 +1,4 @@
-import { Device } from "../Device";
+import { Device } from "../device/Device";
 
 export class DeviceActor {
   protected readonly device: Device;

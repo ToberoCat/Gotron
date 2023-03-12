@@ -1,5 +1,5 @@
 import * as child_process from "child_process";
-import { Device } from "./Device";
+import { Device } from "../device/Device";
 
 
 export interface ExecResult {

@@ -1,5 +1,5 @@
 import { Device } from "./Device";
-import { exec } from "./DeviceTools";
+import { exec } from "../utils/DeviceTools";
 
 export class Emulator extends Device {
 

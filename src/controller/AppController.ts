@@ -1,7 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 
-import { Device } from "../Device";
-import { ExecResult, waitForCondition } from "../DeviceTools";
+import { Device } from "../device/Device";
+import { ExecResult, waitForCondition } from "../utils/DeviceTools";
 import { DeviceActor } from "./Controller";
 
 export class AppController extends DeviceActor {

@@ -1,8 +1,8 @@
-import { AppController } from "./controller/AppController";
-import { InputController } from "./controller/InputController";
-import { exec, ExecResult } from "./DeviceTools";
-import { Hierarchy } from "./controller/HierarchyController";
-import { FileController } from "./controller/FileController";
+import { AppController } from "../controller/AppController";
+import { InputController } from "../controller/InputController";
+import { exec, ExecResult } from "../utils/DeviceTools";
+import { Hierarchy } from "../controller/HierarchyController";
+import { FileController } from "../controller/FileController";
 
 export class Device {
   private readonly _serialId: string;

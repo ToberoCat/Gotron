@@ -1,5 +1,5 @@
-import { Emulator } from "../src/Emulator";
-import { waitForMs } from "../src/DeviceTools";
+import { Emulator } from "../src/device/Emulator";
+import { waitForMs } from "../src/utils/DeviceTools";
 
 (async () => {
   const emulator = await Emulator.connectToEmulator(5555);

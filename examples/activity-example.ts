@@ -1,4 +1,4 @@
-import { Emulator } from "../src/Emulator";
+import { Emulator } from "../src/device/Emulator";
 import { DefaultApps } from "../src/app/DefaultApps";
 
 (async () => {

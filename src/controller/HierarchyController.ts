@@ -1,6 +1,6 @@
 import { DOMParser } from "xmldom";
 import { select, SelectedValue } from "xpath";
-import { Device } from "../Device";
+import { Device } from "../device/Device";
 import { DeviceActor } from "./Controller";
 import { AppElement } from "../app/AppElement";
 import * as fs from "fs";

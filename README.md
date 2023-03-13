@@ -42,7 +42,7 @@ Gotron follows the latest [maintenance LTS](https://github.com/nodejs/Release#re
 
 ### Example
 
-The following example opens the Chrome browser and navigates to the npm package of gotron.
+The following example opens the Chrome browser and navigates to the npm package of gotron. Takes a screenshot and then closes chrome
 
 ````typescript
 import { Emulator } from ".gotron/lib/device/Emulator";

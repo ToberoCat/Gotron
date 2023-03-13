@@ -18,19 +18,27 @@ export class InputController extends DeviceActor {
     return this.device.shell(`input tap ${x} ${y}`);
   }
 
+  public pressKey(key: string): Promise<ExecResult> {
+    return this.device.shell(`input keyevent ${key}`);
+  }
+
   public back(): Promise<ExecResult> {
-    return this.device.shell("input keyevent 4");
+    return this.pressKey("KEYCODE_BACK");
   }
 
   public home(): Promise<ExecResult> {
-    return this.device.shell("input keyevent KEYCODE_HOME");
+    return this.pressKey("KEYCODE_HOME");
   }
 
   public recent(): Promise<ExecResult> {
-    return this.device.shell("input keyevent 1");
+    return this.pressKey("KEYCODE_MENU");
+  }
+
+  public enter(): Promise<ExecResult> {
+    return this.pressKey("66");
   }
 
   public type(text: string): Promise<ExecResult> {
-    return this.device.shell(`input text ${text.replaceAll(" ", "%s")}`);
+    return this.device.shell(`input text "${text.replaceAll(" ", "%s")}"`);
   }
 }

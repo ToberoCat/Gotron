@@ -1,7 +1,7 @@
 import { DeviceActor } from "../controller/Controller";
 import { SelectedValue } from "xpath";
 import { Device } from "../device/Device";
-import { ExecResult } from "../utils/DeviceTools";
+import { ExecResult, waitForMs } from "../utils/DeviceTools";
 import { Bounds } from "../utils/Bounds";
 
 export class AppElement extends DeviceActor {
@@ -53,6 +53,12 @@ export class AppElement extends DeviceActor {
     // ToDo: Implement automatic scrolling to make the element visible
     const center = this._bounds.center();
     return this.device.inputs.click(center.x, center.y);
+  }
+
+  public async type(text: string): Promise<ExecResult> {
+    await this.click();
+    await waitForMs(100);
+    return this.device.inputs.type(text);
   }
 
   get rawElement(): SelectedValue {

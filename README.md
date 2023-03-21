@@ -82,4 +82,5 @@ import { waitForMs } from "gotron/lib/utils/DeviceTools";
 
 ---
 
+- [API Docs](https://github.com/ToberoCat/Gotron/wiki)
 - [Examples](examples)

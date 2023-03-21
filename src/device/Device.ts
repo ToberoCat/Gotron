@@ -17,6 +17,27 @@ export class Device {
     this._fileController = new FileController(this);
   }
 
+  public static async getDevices(): Promise<string[]> {
+    return (await exec("adb devices"))
+      .stdout
+      .split("\n")
+      .slice(1)
+      .map(x => x.trim())
+      .map(x => x.split("\t")[0])
+      .filter(x => x);
+  }
+
+  public static waitForDevice(serial: string): Promise<void> {
+    return new Promise<void>(resolve => {
+      const id = setInterval(async () => {
+        if (!(await Device.getDevices()).includes(serial))
+          return;
+        clearInterval(id);
+        resolve();
+      }, 200);
+    });
+  }
+
   public async platformVersion(): Promise<string> {
     return (await this.shell("getprop ro.build.version.release"))
       .stdout
@@ -52,7 +73,7 @@ export class Device {
     });
   }
 
-  public async screenshot(filePath: string) {
+  public async screenshot(filePath: string): Promise<void> {
     const name = Date.now() + ".png";
     await this.shell(`screencap /sdcard/${name}`);
     await this._fileController.getFile(`/sdcard/${name}`, filePath);
@@ -67,7 +88,7 @@ export class Device {
   }
 
 
-  get files(): FileController {
+  public get files(): FileController {
     return this._fileController;
   }
 

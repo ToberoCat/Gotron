@@ -20,19 +20,19 @@ export class Vector2 {
     return new Vector2(this._x / value, this._y / value);
   }
 
-  get x(): number {
+  public get x(): number {
     return this._x;
   }
 
-  set x(value: number) {
+  public set x(value: number) {
     this._x = value;
   }
 
-  get y(): number {
+  public get y(): number {
     return this._y;
   }
 
-  set y(value: number) {
+  public set y(value: number) {
     this._y = value;
   }
 }

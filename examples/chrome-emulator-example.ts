@@ -1,5 +1,5 @@
-import { Emulator } from "../src/device/Emulator";
-import { waitForMs } from "../src/utils/DeviceTools";
+import { Emulator } from "gotron/lib/device/Emulator";
+import { waitForMs } from "gotron/lib/utils/DeviceTools";
 
 (async () => {
   const emulator = await Emulator.connectToEmulator(5555);

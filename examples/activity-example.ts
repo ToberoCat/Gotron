@@ -1,5 +1,5 @@
-import { Emulator } from "../src/device/Emulator";
-import { DefaultApps } from "../src/app/DefaultApps";
+import { Emulator } from "gotron/lib/device/Emulator";
+import { DefaultApps } from "gotron/lib/app/DefaultApps";
 
 (async () => {
   const emulator = await Emulator.connectToEmulator(5555);
@@ -11,6 +11,6 @@ import { DefaultApps } from "../src/app/DefaultApps";
     activityPackage: "org.chromium.chrome.browser.ChromeTabbedActivity"
   });
 
-  console.log(await emulator.apps.getActivities(DefaultApps.CHROME));
   console.log(await emulator.apps.openActivities());
+  console.log(await emulator.apps.getActivities(DefaultApps.CHROME));
 })();

@@ -17,11 +17,11 @@ export class Bounds {
   }
 
 
-  get min(): Vector2 {
+  public get min(): Vector2 {
     return this._min;
   }
 
-  get max(): Vector2 {
+  public get max(): Vector2 {
     return this._max;
   }
 }

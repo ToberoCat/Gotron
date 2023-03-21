@@ -1,6 +1,6 @@
 {
   "name": "gotron",
-  "version": "1.3.0",
+  "version": "1.3.2",
   "description": "Gotron is a Node.js library which provides a high level API to control an android device over the android debug bridge. Gotron is able to use emulated devices and real devices",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

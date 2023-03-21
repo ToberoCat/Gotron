@@ -61,76 +61,76 @@ export class AppElement extends DeviceActor {
     return this.device.inputs.type(text);
   }
 
-  get rawElement(): SelectedValue {
+  public get rawElement(): SelectedValue {
     return this._rawElement;
   }
 
 
-  get index(): string {
+  public get index(): string {
     return this._index;
   }
 
-  get text(): string {
+  public get text(): string {
     return this._text;
   }
 
-  get resourceId(): string {
+  public get resourceId(): string {
     return this._resourceId;
   }
 
-  get className(): string {
+  public get className(): string {
     return this._className;
   }
 
-  get packageName(): string {
+  public get packageName(): string {
     return this._packageName;
   }
 
-  get contentDesc(): string {
+  public get contentDesc(): string {
     return this._contentDesc;
   }
 
-  get checkable(): boolean {
+  public get checkable(): boolean {
     return this._checkable;
   }
 
-  get checked(): boolean {
+  public get checked(): boolean {
     return this._checked;
   }
 
-  get clickable(): boolean {
+  public get clickable(): boolean {
     return this._clickable;
   }
 
-  get enabled(): boolean {
+  public get enabled(): boolean {
     return this._enabled;
   }
 
-  get focusable(): boolean {
+  public get focusable(): boolean {
     return this._focusable;
   }
 
-  get focused(): boolean {
+  public get focused(): boolean {
     return this._focused;
   }
 
-  get scrollable(): boolean {
+  public get scrollable(): boolean {
     return this._scrollable;
   }
 
-  get longClickable(): boolean {
+  public get longClickable(): boolean {
     return this._longClickable;
   }
 
-  get password(): boolean {
+  public get password(): boolean {
     return this._password;
   }
 
-  get selected(): boolean {
+  public get selected(): boolean {
     return this._selected;
   }
 
-  get bounds(): Bounds {
+  public get bounds(): Bounds {
     return this._bounds;
   }
 }

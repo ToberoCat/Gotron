@@ -12,6 +12,5 @@ export class FileController extends DeviceActor {
 
   public async uploadFile(deviceFilePath: string, localFilePath: string): Promise<ExecResult> {
     return this.device.adb(`push ${localFilePath} ${deviceFilePath}`);
-
   }
 }
